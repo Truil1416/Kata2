@@ -21,13 +21,11 @@ public class Kata2 {
             System.out.println("Introduce un valor: ");
             array[i] = sc.nextInt();
         }
-        Map<Integer, Integer> histogram = new HashMap<>();
-        for (int key : array) {
-            histogram.put(key, histogram.containsKey(key) ? histogram.get(key) + 1 : 1);
-        }
+        Histogram histo = new Histogram(array);
+        Map <Integer,Integer> histogr = histo.getHistogram();
         //map.forEach(<key,value> -> {System.out.println("Key: "+key+" value: "+value);});
-        for (Integer key : histogram.keySet()) {
-            System.out.println(key + " ==> " + histogram.get(key));
+        for (Integer key : histogr.keySet()) {
+            System.out.println(key + " ==> " + histogr.get(key));
         }
     }
 
