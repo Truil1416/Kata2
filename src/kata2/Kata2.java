@@ -16,7 +16,7 @@ public class Kata2 {
         int numberCuantity;
         System.out.println("Intoduce una cantidad de numeros: ");
         numberCuantity = sc.nextInt();
-        int[] array = new int[numberCuantity];
+        Integer[] array = new Integer[numberCuantity];
         for (int i = 0; i < numberCuantity; i++) {
             System.out.println("Introduce un valor: ");
             array[i] = sc.nextInt();
