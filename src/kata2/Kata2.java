@@ -14,17 +14,18 @@ public class Kata2 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int numberCuantity;
-        System.out.println("Intoduce una cantidad de numeros: ");
+        System.out.println("Intoduce una cantidad de nombres: ");
         numberCuantity = sc.nextInt();
-        Integer[] array = new Integer[numberCuantity];
+        String[] array = new String[numberCuantity];
+        sc.nextLine();
         for (int i = 0; i < numberCuantity; i++) {
-            System.out.println("Introduce un valor: ");
-            array[i] = sc.nextInt();
+            System.out.println("Introduce un nombre: ");
+            array[i] = sc.nextLine();
         }
         Histogram histo = new Histogram(array);
-        Map <Integer,Integer> histogr = histo.getHistogram();
+        Map <String,Integer> histogr = histo.getHistogram();
         //map.forEach(<key,value> -> {System.out.println("Key: "+key+" value: "+value);});
-        for (Integer key : histogr.keySet()) {
+        for (String key : histogr.keySet()) {
             System.out.println(key + " ==> " + histogr.get(key));
         }
     }
