@@ -21,20 +21,13 @@ public class Kata2 {
             System.out.println("Introduce un valor: ");
             array[i] = sc.nextInt();
         }
-        Map<Integer, Integer> map = new HashMap<>();
-        for (int i = 0; i < numberCuantity; i++) {
-            if (map.containsKey(array[i])) {
-                map.put(array[i], (int)map.get(array[i]) + 1);//tuve que añadir un casteo
-            } else {
-                map.put(array[i], 1);
-            }
+        Map<Integer, Integer> histogram = new HashMap<>();
+        for (int key : array) {
+            histogram.put(key, histogram.containsKey(key) ? histogram.get(key) + 1 : 1);
         }
         //map.forEach(<key,value> -> {System.out.println("Key: "+key+" value: "+value);});
-
-        //iterar solo sobre claves
-        
-        for (Integer key : map.keySet()) {
-            System.out.println(key + " ==> " + map.get(key));
+        for (Integer key : histogram.keySet()) {
+            System.out.println(key + " ==> " + histogram.get(key));
         }
     }
 
