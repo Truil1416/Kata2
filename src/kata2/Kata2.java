@@ -34,8 +34,7 @@ public class Kata2 {
         //iterar solo sobre claves
         
         for (Integer key : map.keySet()) {
-            Integer value = map.get(key);
-            System.out.println("Key = " + key + ", Value = " + value);
+            System.out.println(key + " ==> " + map.get(key));
         }
     }
 
