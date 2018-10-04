@@ -21,8 +21,7 @@ public class Kata2 {
             System.out.println("Introduce un valor: ");
             array[i] = sc.nextInt();
         }
-        //Map<Integer, Integer> map = new HashMap<>();
-        Map map = new HashMap();
+        Map<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < numberCuantity; i++) {
             if (map.containsKey(array[i])) {
                 map.put(array[i], (int)map.get(array[i]) + 1);//tuve que añadir un casteo
@@ -34,11 +33,8 @@ public class Kata2 {
 
         //iterar solo sobre claves
         
-        Iterator entries = map.entrySet().iterator();
-        while (entries.hasNext()) {
-            Map.Entry entry = (Map.Entry) entries.next();
-            Integer key = (Integer) entry.getKey();
-            Integer value = (Integer) entry.getValue();
+        for (Integer key : map.keySet()) {
+            Integer value = map.get(key);
             System.out.println("Key = " + key + ", Value = " + value);
         }
     }
